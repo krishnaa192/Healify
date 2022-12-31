@@ -1,0 +1,27 @@
+{% load static %} 
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'style/style.css' %}"/>
+{% endblock %} 
+{% block body %}
+{% include 'Health/header.html' %}
+<h1>
+{{pkg.package_name}}
+<br>
+
+
+    Fill the info about to register... 
+</h1>
+    <form  action="" method="post">
+        {% csrf_token %}
+    
+    {{form.as_p}}
+    <br>
+    
+        <input type="submit" value="Submit">
+
+    </form>
+
+    {% include 'Health/footer.html'%}
+
+    {% endblock %}
